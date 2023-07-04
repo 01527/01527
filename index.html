@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>권은채</title>
+  <style>
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      background: #FAFAFA;
+      display: flex;
+      flex-direction: column;
+    }
+    #topbar {
+      position: fixed;
+      width: 100vw;
+      height: 60px;
+      display: flex;
+      padding: 0 112px;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      background: #fff;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-sizing: border-box;
+      z-index: 100;
+    }
+    #name {
+      color: #000;
+      font-size: 16px;
+      font-weight: 900;
+      margin: 0 34px;
+    }
+    #nav {
+      display: flex;
+      gap: 47px;
+      height: 100%;
+      align-items: center;
+    }
+    #nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 350;
+      transition: all .2s ease;
+    }
+    #nav a.current, #nav a:hover {
+      font-weight: 700;
+    }
+    .page {
+      height: 100vh;
+      width: 100vw;
+    }
+    #main {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    #main .container {
+      display: flex;
+      gap: 160px;
+    }
+    #main .container img {
+      height: 465px;
+    }
+    #main .container .explain {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+    #main .container .explain .title {
+      color: #626262;
+      font-weight: 600;
+      font-size: 36px;
+      margin-top: 60px;
+    }
+    #main .container .explain .content {
+      font-weight: 400;
+      font-size: 24px;
+    }
+    #main .down {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      bottom: 10%;
+      cursor: pointer;
+    }
+    #reborn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #reborn .container {
+      width: 80%;
+      height: 60%;
+      background: #fff;
+      border-radius: 35px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      display: flex;
+      gap: 170px;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    #reborn .container .logoBox {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+    }
+    #reborn .container .explain {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    #reborn .container .explain .title {
+      margin-top: 30px;
+      color: #000;
+      font-size: 36px;
+      font-weight: 600;
+    }
+    #reborn .container .explain .content {
+      color: #626262;
+      font-weight: 400;
+      font-size: 20px;
+    }
+    #youtube {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 136px;
+    }
+    #youtube .explain {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+    #youtube .explain .title {
+      color: #000;
+      font-size: 36px;
+      font-weight: 600;
+    }
+    #youtube .explain .content {
+      font-size: 16px;
+      font-weight: 300;
+    }
+    #youtube .explain a, #contact a {
+      text-decoration: none;
+      background: #353745;
+      box-shadow: 0px 0px 50px rgba(161, 161, 161, 0.15);
+      border-radius: 15px;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 500;
+      width: 437px;
+      height: 76px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #youtube img {
+      width: 573px;
+    }
+    #contact {
+      width: 100vw;
+      height: 50vh;
+      display: flex;
+      padding: 0 145px;
+      background: #F7F7F7;
+      flex-direction: column;
+      justify-content: center;
+      gap: 60px;
+      box-sizing: border-box;
+    }
+    #contact .title {
+      color: #000;
+      font-weight: 600;
+      font-size: 36px;
+    }
+    #footer {
+      width: 100vw;
+      height: 110px;
+      background: #fff;
+      display: flex;
+      gap: 70px;
+      padding: 0 145px;
+      align-items: center;
+    }
+    #footer img {
+      width: 45px;
+    }
+    #footer a {
+      color: #5E5E5E;
+      font-weight: 500;
+      font-size: 18px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="topbar">
+    <span id="name">권은채</span>
+    <div id="nav">
+      <a href="#main" id="mainNav">권은채</a>
+      <a href="#reborn" id="rebornNav">Re:born</a>
+      <a href="#youtube" id="youtubeNav">Youtube</a>
+      <a href="#contact" id="contactNav">Contact</a>
+    </div>
+  </div>
+  <div class="page" id="main">
+    <div class="container">
+      <img src="./01527.png" alt="">
+      <div class="explain">
+        <span class="title">뭔가 달라도 확실히 다른<br>열아홉</span>
+        <span class="content">안녕하세요.<br>스스로 일을 찾는 사람,<br>권은채입니다!</span>
+      </div>
+    </div>
+    <img src="./down.svg" alt="" class="down" onclick="location.href = '/#reborn'">
+  </div>
+  <div class="page" id="reborn">
+    <div class="container">
+      <div class="logoBox">
+        <img src="./logo.svg" alt="">
+        <img src="./logoName.png" alt="">
+      </div>
+      <div class="explain">
+        <span class="title">스타트업 팀 Re:born</span>
+        <span class="content">
+          스타트업 팀 Re:born의 대표를 맡고 있습니다.<br>“자사의 서비스로 당신에게 특별한 삶을 선물해드립니다.”<br>라는 슬로건 아래 서비스를 제작 중에 있습니다.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="page" id="youtube">
+    <div class="explain">
+      <div class="title">Youtube Creator</div>
+      <div class="content">초등학교 4학년부터 영상 만들기를 좋아했던 저는<br>2015년부터 현재까지 저의 채널을 운영해 오고 있습니다.</div>
+      <a href="https://www.youtube.com/channel/UCen3G3sSGXQmpxBLFlihuVg" target='_blank'>권은채 유튜브 채널 바로가기</a>
+    </div>
+    <img src="./youtube.png" alt="">
+  </div>
+  <div id="contact">
+    <span class="title">
+      저에 대해<br>더 자세히 알아보세요.
+    </span>
+    <a href="https://www.instagram.com/archive_01527/" target='_blank'>개인 포트폴리오 보러가기</a>
+  </div>
+  <div id="footer">
+    <img src="./logo.svg" alt="">
+    <a href="https://www.instagram.com/_01527/" target='_blank'>인스타그램</a>
+    <a href="https://namu.wiki/w/권은채" target='_blank'>나무위키</a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    const mainP = $('#main').offset();
+    const rebornP = $('#reborn').offset();
+    const youtubeP = $('#youtube').offset();
+    const contactP = $('#contact').offset();
+
+    $(window).scroll(function() {
+      if($(document).scrollTop() >= mainP.top && $(document).scrollTop() < rebornP.top) $('#mainNav').addClass('current');
+      else $('#mainNav').removeClass('current');
+
+      if($(document).scrollTop() >= rebornP.top && $(document).scrollTop() < youtubeP.top) $('#rebornNav').addClass('current');
+      else $('#rebornNav').removeClass('current');
+
+      if($(document).scrollTop() >= youtubeP.top && $(document).scrollTop() < contactP.top) $('#youtubeNav').addClass('current');
+      else $('#youtubeNav').removeClass('current');
+
+      if($(document).scrollTop() >= contactP.top) $('#contactNav').addClass('current');
+      else $('#contactNav').removeClass('current');
+    });
+  </script>
+</body>
+</html>
